@@ -14,14 +14,21 @@ function StarRating({ rating }) {
     If the rating is 4, we need 4 copies.
   */
 
+const ratingsArray = range(rating)
+
   return (
     <div className="star-wrapper">
-      <img
+      {
+        ratingsArray.map( idx=> (
+          <img
         key={crypto.randomUUID()}
         alt=""
         className="gold-star"
         src="/star.svg"
       />
+        ))
+      }
+      
     </div>
   )
 }
